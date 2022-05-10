@@ -1,12 +1,14 @@
 
 import FooterComponent from '../footer/Footer';
 import ToursComponent from '../tours/Tours';
+import Header from '../header/Header';
  const travelList=require("../data/db.json")
 
 
  function HomeComponent() {
     return (
       <div>
+        <Header/>
        {
         travelList.map(travel =>{
   
