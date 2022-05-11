@@ -1,24 +1,16 @@
-import Header from '../header/Header';
-import Tours from  '../tours/Tours';
-import Footer from '../footer/Footer';
-import Navbar from '../navbar/Navbar';
-import TourDetails from '../TourDetails/TourDetails';
-import data from '../data/db.json';
+
+import FooterComponent from '../footer/Footer';
+import ToursComponent from '../tours/Tours';
+ const travelList=require("../data/db.json")
 
 
-
-function Home(props) {
+ function HomeComponent() {
     return (
-      <>
-      <nav>
-      <Header/>
-      <Navbar/>
-
-      </nav>
-      <Tours   data={data}/>
-      <Footer />
-      </>
-   );
+      <div>
+        <ToursComponent/>
+        <FooterComponent/>
+      </div>
+    );
   }
   
-  export default Home;
+  export default HomeComponent;
