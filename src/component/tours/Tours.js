@@ -1,22 +1,26 @@
+const travelList=require("../data/db.json")
 
 
-import Tour from '../tours/tour/Tour';
-import {Link } from 'react-router-dom';
-
-function Tours(props) {
-    return (
-        <>
-            {props.data.map((m, index) => {
-          const { id, name, image } = m;
-          return (
-            <Link to={`/m/${id}`}>
-              <Tour name={name} image={image} key={index} />
-            </Link>
-          )
-        }
-        )}
-        </>
-    );
+function HandelClick(id){
+console.log(id);
 }
 
-export default Tours;
+function ToursComponent(){
+
+    return(
+        <>
+            {travelList.map(travrl =>(
+          <div key={travrl.id} onClick={()=>{HandelClick(travrl.id)}}>
+            
+         <img src={travrl.image} alt=""/>
+        <p>Travel Name:{travrl.name}</p>
+        <p>------------------------</p>
+        </div>
+
+            ))}
+        
+        </>
+    )
+}
+
+export default ToursComponent;
