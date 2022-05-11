@@ -1,25 +1,24 @@
-
-import FooterComponent from '../footer/Footer';
-import ToursComponent from '../tours/Tours';
 import Header from '../header/Header';
- const travelList=require("../data/db.json")
+import Tours from  '../tours/Tours';
+import Footer from '../footer/Footer';
+import Navbar from '../navbar/Navbar';
+import TourDetails from '../TourDetails/TourDetails';
+import data from '../data/db.json';
 
 
- function HomeComponent() {
+
+function Home(props) {
     return (
-      <div>
-        <Header/>
-       {
-        travelList.map(travel =>{
-  
-          return(
-             <ToursComponent image={travel.image} id={travel.id} name={travel.name} info={travel.info} price={travel.price} />
-          )
-        })
-      } 
-      <FooterComponent/>
-      </div>
-    );
+      <>
+      <nav>
+      <Header/>
+      <Navbar/>
+
+      </nav>
+      <Tours   data={data}/>
+      <Footer />
+      </>
+   );
   }
   
-  export default HomeComponent;
+  export default Home;

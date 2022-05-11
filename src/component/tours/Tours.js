@@ -1,17 +1,22 @@
 
 
-function ToursComponent(props){
+import Tour from '../tours/tour/Tour';
+import {Link } from 'react-router-dom';
 
-    return(
+function Tours(props) {
+    return (
         <>
-        <img src={props.image} alt=""/>
-        <p>The travel Id:{props.id}</p>
-        <p>Travel Name:{props.name}</p>
-        <p>Travel Information:{props.info}</p>
-        <p>Travel Price:{props.price}</p>
-        <p>------------------------</p>
+            {props.data.map((m, index) => {
+          const { id, name, image } = m;
+          return (
+            <Link to={`/m/${id}`}>
+              <Tour name={name} image={image} key={index} />
+            </Link>
+          )
+        }
+        )}
         </>
-    )
+    );
 }
 
-export default ToursComponent;
+export default Tours;
