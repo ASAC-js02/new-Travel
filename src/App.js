@@ -1,10 +1,17 @@
 
 import './App.css';
-import HomeComponent from './component/home/Home';
+import { Routes, Route } from "react-router-dom";
+
+import Home from './component/home/Home';
+import TourDetails from './component/TourDetails/TourDetails';
 function App() {
   return (
     <>
-     <HomeComponent/>
+    <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Tour/:id" element={<TourDetails />} />
+      </Routes>
+     <Home/>
     </>
   );
 }
